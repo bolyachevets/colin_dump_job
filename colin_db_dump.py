@@ -13,6 +13,7 @@
 # limitations under the License.
 import cx_Oracle
 import os
+import requests
 
 def oracle_db_dump():
     connection = None
@@ -36,6 +37,11 @@ def oracle_db_dump():
         if connection:
             connection.close()
 
+def check_ip():
+    url = 'https://ipinfo.io'
+    response = requests.request("POST", url)
+    print(response.text)
 
 if __name__ == '__main__':
+    check_ip()
     oracle_db_dump()
