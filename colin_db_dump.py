@@ -39,9 +39,9 @@ def oracle_db_dump():
 
 def check_ip():
     url = 'https://ipinfo.io'
-    response = requests.request("POST", url)
+    response = requests.request("GET", url)
     print(response.text)
 
 if __name__ == '__main__':
     check_ip()
-    oracle_db_dump()
+    # oracle_db_dump()
